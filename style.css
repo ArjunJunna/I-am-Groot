@@ -5,65 +5,105 @@
   box-sizing: border-box;
 }
 :root {
-  --bg-color: rgb(206, 243, 136);
+  --bg-color: rgba(204, 227, 240, 0.5);
 }
 body {
   /* font-family: 'Roboto Mono', sans-serif;*/
   font-family: 'Quicksand', sans-serif;
-  background-image: linear-gradient(
-    to right,
-    rgb(99, 194, 99),
-    rgba(7, 58, 7, 0.651)
-  );
+  background: url(Grootpic.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
   margin: 0px;
   animation: fromleft 1.5s ease-out;
 }
 h2,
 h3 {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
+}
+h3 {
+  color: white;
 }
 textarea {
-  width: 80%;
+  width: 40%;
   height: 20vh;
   display: block;
-  margin: 2rem auto;
+  margin: 3rem auto;
   border-radius: 2rem;
   padding: 1rem;
-  border: 0.15rem solid #000;
+  border: 0.15rem solid rgb(52, 133, 6);
   background-color: var(--bg-color);
   color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  font-weight: bold;
+  outline: none;
+}
+textarea:hover {
+  animation: fromBottom 0.4s ease-in;
 }
 #btn-translate {
-  background-color: #b9e26e;
-  border-radius: 4rem;
-  color: rgb(255, 255, 255);
+  background-color: rgba(204, 227, 240, 0.7);
+  border-radius: 2rem;
+  color: rgb(32, 114, 29);
   box-sizing: border-box;
   padding: 0.5rem 1rem;
   margin-left: 40rem;
+  border: 0.15rem solid rgb(52, 133, 6);
 }
 #btn-translate:hover {
   transform: scale(1.2);
 }
 
 #txt-output {
-  width: 80%;
+  width: 40%;
   height: 20vh;
   border-radius: 2rem;
-  border: 0.15rem solid #000;
+  border: 0.15rem solid rgb(52, 133, 6);
   margin: 2rem auto;
   padding: 1rem;
   background-color: var(--bg-color);
   color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+#txt-output:hover {
+  animation: fromLeftRight 0.5s ease-out;
 }
 
 @keyframes fromleft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-50px);
   }
   50% {
     transform: translate(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes fromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes fromLeftRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(-20px);
   }
   100% {
     opacity: 1;
