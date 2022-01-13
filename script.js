@@ -1,25 +1,24 @@
-var txtInput = document.querySelector('#txt-input');
-var btnTranslate = document.querySelector('#btn-translate');
-var OutputDiv = document.querySelector('#txt-output');
+let txtInput = document.querySelector('#txt-input');
+let btnTranslate = document.querySelector('#btn-translate');
+let OutputDiv = document.querySelector('#txt-output');
 
-var serverURL = 'https://api.funtranslations.com/translate/groot.json';
+let serverURL = 'https://api.funtranslations.com/translate/groot.json';
 
-function getTranslationURL(input) {
-  return serverURL + '?' + 'text=' + input;
-}
+const getTranslationURL=input=>serverURL + '?' + 'text=' + input;
 
-function errorHandler(error) {
+
+const errorHandler=(error)=>{
   console.log('error occured', error);
   alert('Server down!! Try later');
 }
 
-function clickHandler() {
-  var inputText = txtInput.value;
+const clickHandler=()=>{
+  let inputText = txtInput.value;
 
   fetch(getTranslationURL(inputText))
     .then((response) => response.json())
     .then((json) => {
-      var translatedText = json.contents.translated;
+      let translatedText = json.contents.translated;
       OutputDiv.innerText = translatedText;
     })
     .catch(errorHandler);
